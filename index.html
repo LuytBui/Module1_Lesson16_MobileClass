@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script src="mobile.js"></script>
+<script>
+let mobileLuyt = new Mobile(50,[],[],[],true);
+let mobileHung = new Mobile(50,[],[],[],false);
+
+mobileHung.switch();
+mobileLuyt.charge();
+console.log('Mobile Luyt battery: ' + mobileLuyt.battery);
+
+mobileLuyt.sendMessage('Hello', mobileHung);
+mobileLuyt.sendMessage('How are you doing?', mobileHung);
+// mobileLuyt.showSent();
+mobileLuyt.receiveMessage('Hello hello', mobileHung);
+// mobileLuyt.showInbox();
+
+
+mobileHung.createMessage('This is a...');
+console.log('inbox ' + mobileHung.inbox);
+console.log('sent ' + mobileHung.sent);
+console.log('battery '+mobileHung.battery);
+console.log('status '+mobileHung.status);
+console.log('draft: '+mobileHung.draft);
+
+</script>
+</body>
+</html>
